@@ -8,17 +8,27 @@ import java.util.Date;
 
 public class Session {
 
+    private int id;
     private Date date;
     private String title;
     private String description;
     private int adventure_id;
 
 
-    public Session(Date date, String title, String description, int adventure_id) {
+    public Session(int id,Date date, String title, String description, int adventure_id) {
+        this.id = id;
         this.date = date;
         this.title = title;
         this.description = description;
         this.adventure_id = adventure_id;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id;){
+        this.id = id;
     }
 
     public Date getDate() {

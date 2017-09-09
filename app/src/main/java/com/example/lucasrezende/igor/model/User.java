@@ -6,16 +6,26 @@ package com.example.lucasrezende.igor.model;
 
 public class User {
 
+    private int id;
     private String email;
     private String name;
     private String nickname;
     private String image;
 
-    public User(String email, String name, String nickname, String image) {
+    public User(int id,String email, String name, String nickname, String image) {
+        this.id = id;
         this.email = email;
         this.name = name;
         this.nickname = nickname;
         this.image = image;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id;){
+        this.id = id;
     }
 
     public String getEmail() {

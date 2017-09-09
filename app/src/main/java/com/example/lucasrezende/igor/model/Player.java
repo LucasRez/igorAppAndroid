@@ -6,18 +6,28 @@ package com.example.lucasrezende.igor.model;
 
 public class Player {
 
+    private int id;
     private String nickname;
     private String description;
     private String picture;
     private int user_id;
     private int adventure_id;
 
-    public Player(String nickname, String description, String picture, int user_id, int adventure_id) {
+    public Player(int id,String nickname, String description, String picture, int user_id, int adventure_id) {
+        this.id = id;
         this.nickname = nickname;
         this.description = description;
         this.picture = picture;
         this.user_id = user_id;
         this.adventure_id = adventure_id;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id;){
+        this.id = id;
     }
 
     public String getNickname() {

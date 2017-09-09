@@ -6,6 +6,7 @@ package com.example.lucasrezende.igor.model;
 
 public class Adventure {
 
+    private int id;
     private String name;
     private String backgroud_image;
     private String position;
@@ -13,13 +14,22 @@ public class Adventure {
     private int user_id;
     private String book_name;
 
-    public Adventure(String name, String backgroud_image, String position, String description, int user_id, String book_name) {
+    public Adventure(int id,String name, String backgroud_image, String position, String description, int user_id, String book_name) {
+        this.id = id;
         this.name = name;
         this.backgroud_image = backgroud_image;
         this.position = position;
         this.description = description;
         this.user_id = user_id;
         this.book_name = book_name;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id;){
+        this.id = id;
     }
 
     public String getName() {
