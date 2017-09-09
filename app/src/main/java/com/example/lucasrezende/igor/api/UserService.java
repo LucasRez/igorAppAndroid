@@ -19,7 +19,7 @@ public interface UserService {
     @FormUrlEncoded
     @POST("auth")
     Call<ResponseBody> createUser(@Field("email") String email, @Field("password") String password,
-                          @Field("password_confirmation") String password_confirmation);
+                          @Field("password_confirmation") String password_confirmation,@Field("nickname") String nickname);
 
     @FormUrlEncoded
     @POST("auth/sign_in")

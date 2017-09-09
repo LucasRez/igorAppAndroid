@@ -31,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        //register("teste13@gmail.com","123456123456","123456123456");
+        //register("teste13@gmail.com","123456123456","123456123456","vzaffalin");
     }
 
     private void goToMainActivity(){
@@ -40,10 +40,10 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void register(String email,String password,String password_confirmation){
+    private void register(String email,String password,String password_confirmation,String nickname){
         UserServiceImplentation client = new UserServiceImplentation(getApplicationContext());
         // Fetch a list of the Github repositories.
-        Call<ResponseBody> call = client.getService().createUser(email,password,password_confirmation);
+        Call<ResponseBody> call = client.getService().createUser(email,password,password_confirmation,nickname);
 
         // Execute the call asynchronously. Get a positive or negative callback.
         call.enqueue(new Callback<ResponseBody>() {
