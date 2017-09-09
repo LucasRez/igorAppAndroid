@@ -18,12 +18,12 @@ public interface UserService {
 
     @FormUrlEncoded
     @POST("auth")
-    Call<User> createUser(@Field("email") String email, @Field("password") String password,
-                          @Field("password_confirmation") String password_confirmation, @Field("nickname") String nickname);
+    Call<ResponseBody> createUser(@Field("email") String email, @Field("password") String password,
+                          @Field("password_confirmation") String password_confirmation);
 
     @FormUrlEncoded
     @POST("auth/sign_in")
-    Call<User> logIn(@Field("email") String email, @Field("password") String password);
+    Call<ResponseBody> logIn(@Field("email") String email, @Field("password") String password);
 
 
     @Headers({
@@ -33,5 +33,5 @@ public interface UserService {
             "access-token: {access-token}"
     })
     @DELETE("auth/sign_out")
-    Call<User> logOut(@Path("uid") String uid,@Path("client") String client,@Path("access-token") String access_token);
+    Call<ResponseBody> logOut(@Path("uid") String uid,@Path("client") String client,@Path("access-token") String access_token);
 }
