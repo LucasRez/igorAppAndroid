@@ -1,4 +1,4 @@
-package com.example.lucasrezende.igor.controller;
+package com.example.lucasrezende.igor.controller.login;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,26 +10,30 @@ import android.widget.Toast;
 
 import com.example.lucasrezende.igor.R;
 import com.example.lucasrezende.igor.Utils.Constants;
+import com.example.lucasrezende.igor.api.AdventureServiceImplentation;
 import com.example.lucasrezende.igor.api.ResponseBody;
+import com.example.lucasrezende.igor.api.UserService;
 import com.example.lucasrezende.igor.api.UserServiceImplentation;
+import com.example.lucasrezende.igor.controller.NavigationActivity;
+import com.example.lucasrezende.igor.model.User;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.Headers;
 
 /**
  * Created by vzaffalon on 09/09/17.
  */
 
-public class LoginActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        //login("teste13@gmail.com","123456123456");
+        setContentView(R.layout.activity_register);
+        //register("teste13@gmail.com","123456123456","123456123456","vzaffalin");
     }
-
 
     private void goToMainActivity(){
         Intent intent = new Intent(getBaseContext(),NavigationActivity.class);
@@ -37,11 +41,10 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-    private void login(String email,String password){
+    private void register(String email,String password,String password_confirmation,String nickname){
         UserServiceImplentation client = new UserServiceImplentation(getApplicationContext());
         // Fetch a list of the Github repositories.
-        Call<ResponseBody> call = client.getService().logIn(email,password);
+        Call<ResponseBody> call = client.getService().createUser(email,password,password_confirmation,nickname);
 
         // Execute the call asynchronously. Get a positive or negative callback.
         call.enqueue(new Callback<ResponseBody>() {
@@ -80,4 +83,5 @@ public class LoginActivity extends AppCompatActivity {
 
         goToMainActivity();
     }
+
 }

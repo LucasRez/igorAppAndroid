@@ -1,11 +1,20 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
+        <item name="colorAccent">@color/white</item>
 
+        <!-- Cor de acentuacao para as views -->
+        <item name="android:textColorPrimary">@color/white</item>
+
+        <!-- Cor para o efeito do ripple -->
+        <item name="colorControlHighlight">@color/white</item>
+
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorButtonNormal">@color/white</item>
+    </style>
 </resources>

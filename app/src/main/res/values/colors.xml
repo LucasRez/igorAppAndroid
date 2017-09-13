@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#221233</color>
+    <color name="colorPrimaryDark">#221233</color>
+    <color name="colorAccent">#fff</color>
+
+    <!-- App colors -->
+    <color name="tutorial_button_blue">#1e88e5</color>
+    <color name="bottom_bar_color">#f5f6f8</color>
+    <color name="bottom_bar_notification_color">#ed4a57</color>
+    <color name="bottom_bar_icon_color">#919294</color>
+
+    <!-- order_status_colors -->
+    <color name="status_1">#ed4a57</color>
+    <color name="status_2">#e74c3c</color>
+    <color name="status_3">#2ecc71</color>
+    <color name="status_4">#3498db</color>
+    <color name="status_5">#f1c40f</color>
+
+    <!-- Outras Cores -->
+    <color name="button_colors">#e5a85d</color>
+    <color name="pink">#FF4081</color>
+    <color name="transparent">#0000</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="violet">#990000</color>
+    <color name="blue">#00f</color>
+    <color name="red">#17b180</color>
+    <color name="green">#17b180</color>
+    <color name="gray">#BDBDBD</color>
+    <color name="dark_gray">#616161</color>
+    <color name="light_blue">#64B5F6</color>
+    <color name="material_blue_500">#0097a7</color>
+    <color name="navcolor">#f9eed7</color>
+
+
 </resources>
