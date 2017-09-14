@@ -16,7 +16,19 @@
         android:minHeight="?attr/actionBarSize"
         app:popupTheme="@style/ThemeOverlay.AppCompat"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"/>
+        android:layout_width="match_parent">
+
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:padding="8sp"
+            android:src="@drawable/igor_login_icon"
+            android:id="@+id/toolbar_image"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"/>
+
+    </android.support.v7.widget.Toolbar>
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/fragment_container"

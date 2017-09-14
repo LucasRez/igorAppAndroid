@@ -1,5 +1,6 @@
 package com.example.lucasrezende.igor.controller.adventures;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.example.lucasrezende.igor.R;
 import com.example.lucasrezende.igor.model.Adventure;
@@ -23,12 +25,25 @@ public class AdventureListFragment extends Fragment {
     List<Adventure> adventures;
     RecyclerView recyclerView;
     View view;
+    private ImageButton new_adventure_button;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_adventure_list, container, false);
         setHasOptionsMenu(true);
         setUpList();
+        setUpLayout();
         return view;
+    }
+
+    private void setUpLayout(){
+        new_adventure_button = (ImageButton) view.findViewById(R.id.new_adventure_button);
+        new_adventure_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(),NewAdventureActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
