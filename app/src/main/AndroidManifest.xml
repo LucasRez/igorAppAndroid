@@ -15,13 +15,13 @@
 
         </activity>
         <activity android:name=".controller.login.LoginActivity">
-        </activity>
-        <activity android:name=".controller.NavigationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".controller.NavigationActivity">
         </activity>
     </application>
 

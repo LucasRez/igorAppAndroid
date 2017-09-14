@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.lucasrezende.igor.R;
@@ -24,11 +26,37 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private Button login_button;
+    private Button register_button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        setUpLayout();
         //login("teste13@gmail.com","123456123456");
+    }
+
+    private void setUpLayout(){
+        login_button = (Button) findViewById(R.id.login_button);
+        register_button = (Button) findViewById(R.id.register_button);
+
+        login_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(),NavigationActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+
+        register_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(),RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
