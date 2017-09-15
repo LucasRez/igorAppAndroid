@@ -14,9 +14,6 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 
-/**
- * Created by zaffalon on 3/8/16.
- */
 public class AdventuresAdapter extends RecyclerView.Adapter<AdventuresAdapter.ViewHolder> {
 
     private final Context context;
