@@ -65,10 +65,10 @@ public class NavigationActivity extends AppCompatActivity {
     private void setUpNavigationDrawer(){
         //if you want to update the items at a later time it is recommended to keep it in a variable
         PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Aventuras");
-        SecondaryDrawerItem item2 = new SecondaryDrawerItem().withIdentifier(2).withName("Livros");
-        SecondaryDrawerItem item3 = new SecondaryDrawerItem().withIdentifier(2).withName("Contas");
-        SecondaryDrawerItem item4 = new SecondaryDrawerItem().withIdentifier(2).withName("Notificações");
-        SecondaryDrawerItem item5 = new SecondaryDrawerItem().withIdentifier(2).withName("Configurações");
+        PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName("Livros");
+        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName("Contas");
+        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(4).withName("Notificações");
+        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName("Configurações");
 
         //create the drawer and remember the `Drawer` result object
         final Drawer result = new DrawerBuilder()

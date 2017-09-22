@@ -1,0 +1,71 @@
+<LinearLayout android:orientation="horizontal"
+    android:layout_height="90dp"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center_horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/warrior"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/transparent"
+        android:layout_marginLeft="20dp"
+        android:layout_gravity="center_vertical"/>
+        <LinearLayout android:orientation="vertical"
+            android:layout_height="90dp"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
+            >
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Mestre"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#200f31"
+                        android:gravity="center"
+                         />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Marcio"
+                        android:textSize="14sp"
+                        android:textColor="#1a082b"
+                        android:gravity="center"
+                        android:layout_marginLeft="10dp" />
+
+
+                </LinearLayout>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Mestre impiedoso que não se importa de matar jogadores"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                />
+
+            <View
+                android:id="@+id/name"
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                android:background="@color/gray"
+                android:layout_marginTop="15dp"
+                />
+
+
+            </LinearLayout>
+</LinearLayout>

@@ -2,7 +2,17 @@
 <resources>
     <color name="colorPrimary">#221233</color>
     <color name="colorPrimaryDark">#221233</color>
-    <color name="colorAccent">#fff</color>
+    <color name="colorAccent">#221233</color>
+
+    <!-- Material DEFAULT colors -->
+    <color name="material_drawer_primary">#ca2a6c</color>
+    <color name="material_drawer_primary_dark">#ca2a6c</color>
+    <color name="material_drawer_primary_light">#ca2a6c</color>
+    <color name="material_drawer_primary_text">#F2D97F</color>
+    <color name="material_drawer_accent">#F2D97F</color>
+    <color name="material_drawer_background">#221233</color>
+    <color name="material_drawer_selected">#221233</color>
+    <color name="material_drawer_selected_text">#ca2a6c</color>
 
     <!-- App colors -->
     <color name="tutorial_button_blue">#1e88e5</color>
@@ -10,12 +20,6 @@
     <color name="bottom_bar_notification_color">#ed4a57</color>
     <color name="bottom_bar_icon_color">#919294</color>
 
-    <!-- order_status_colors -->
-    <color name="status_1">#ed4a57</color>
-    <color name="status_2">#e74c3c</color>
-    <color name="status_3">#2ecc71</color>
-    <color name="status_4">#3498db</color>
-    <color name="status_5">#f1c40f</color>
 
     <!-- Outras Cores -->
     <color name="button_colors">#e5a85d</color>

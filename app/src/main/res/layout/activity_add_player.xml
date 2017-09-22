@@ -41,8 +41,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="De um nome para sua aventura"
-            android:layout_marginTop="20dp"
+            android:text="Escreve o nickname do jogador que deve ser adicionado"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="40dp"
             android:textColor="#97959A"/>
 
@@ -55,7 +55,7 @@
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:backgroundTint="#b2b2b2"
-            android:hint="Nome da aventura"
+            android:hint="Nickname"
             />
 
         <Button
@@ -65,7 +65,7 @@
             android:textColor="@color/black"
             android:background="#00e2BA"
             android:layout_gravity="end"
-            android:layout_marginTop="190dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="40dp"
             android:layout_marginLeft="40dp"
             android:text="PRONTO" />
@@ -76,9 +76,9 @@
         android:layout_width="80px"
         android:layout_height="80px"
         android:scaleType="fitXY"
-        android:src="@drawable/botao_adicionar_sessao"
+        android:src="@drawable/adicionar_jogador"
         android:background="@color/transparent"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="70dp"/>
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="65dp"/>
 </RelativeLayout>
