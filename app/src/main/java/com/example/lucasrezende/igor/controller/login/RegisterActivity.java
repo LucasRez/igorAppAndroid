@@ -6,6 +6,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.lucasrezende.igor.R;
@@ -33,6 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         //register("teste13@gmail.com","123456123456","123456123456","vzaffalin");
+        setUpRegisterButton();
     }
 
     @Override
@@ -45,6 +49,27 @@ public class RegisterActivity extends AppCompatActivity {
         Intent intent = new Intent(getBaseContext(),NavigationActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+    }
+
+    private void setUpRegisterButton(){
+        Button register_button = (Button) findViewById(R.id.register_button);
+
+        register_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getRegistrationData();
+            }
+        });
+    }
+
+    private void getRegistrationData(){
+        EditText et_email = (EditText) findViewById(R.id.et_email);
+        EditText et_password = (EditText) findViewById(R.id.et_password);
+        EditText et_password_confirmation = (EditText) findViewById(R.id.et_password_confirmation);
+        EditText et_nickname = (EditText) findViewById(R.id.et_nickname);
+
+        register(et_email.getText().toString(),et_password.getText().toString(),et_password_confirmation.getText().toString(),et_nickname.getText().toString());
+
     }
 
     private void register(String email,String password,String password_confirmation,String nickname){

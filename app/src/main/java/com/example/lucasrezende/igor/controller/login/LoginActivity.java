@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.lucasrezende.igor.R;
@@ -44,9 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getBaseContext(),NavigationActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                getLoginData();
             }
         });
 
@@ -57,6 +56,12 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void getLoginData(){
+        EditText et_email = (EditText) findViewById(R.id.et_email);
+        EditText et_password = (EditText) findViewById(R.id.et_password);
+        login(et_email.getText().toString(),et_password.getText().toString());
     }
 
 
