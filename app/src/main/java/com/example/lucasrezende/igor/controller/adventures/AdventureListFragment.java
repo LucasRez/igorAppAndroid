@@ -34,6 +34,7 @@ import retrofit2.Response;
 public class AdventureListFragment extends Fragment {
     List<Adventure> adventures = new ArrayList<>();
     RecyclerView recyclerView;
+    AdventureServiceImplentation client;
     View view;
     private ImageButton new_adventure_button;
 
@@ -73,8 +74,47 @@ public class AdventureListFragment extends Fragment {
         };
     }
 
+    private AdventuresAdapter.OnClickListenerDeleteButton onClickDeleteButton(){
+        return new AdventuresAdapter.OnClickListenerDeleteButton(){
+            @Override
+            public void onClickDeleteButton(View view, int idx) {
+               deleteAdventure(idx);
+            }
+        };
+    }
+
+    private void deleteAdventure(int idx){
+        client = new AdventureServiceImplentation(getContext());
+        Call<Adventure> call = client.getService().delete(adventures.get(idx).getId());
+
+        // Execute the call asynchronously. Get a positive or negative callback.
+        call.enqueue(new Callback<Adventure>() {
+            @Override
+            public void onResponse(Call<Adventure> call, Response<Adventure> response) {
+                // The network call was a success and we got a response
+                // TODO: use the repository list and display it
+                if(response.isSuccessful()) {
+                    Toast.makeText(getContext(),"Aventura deletada com sucesso",Toast.LENGTH_SHORT).show();
+                    getAdventuresList();
+                    setUpLayout();
+                }else{
+                    Toast.makeText(getContext(),"Falha ao deletar a aventura",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Adventure> call, Throwable t) {
+                // the network call was a failure
+                // TODO: handle error
+                Log.d("Error", t.getMessage());
+                Toast.makeText(getContext(),t.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     private void getAdventuresList(){
-        AdventureServiceImplentation client = new AdventureServiceImplentation(getContext());
+        client = new AdventureServiceImplentation(getContext());
         // Fetch a list of the Github repositoriesteste.
         Call<List<Adventure>> call = client.getService().list();
 
@@ -110,6 +150,6 @@ public class AdventureListFragment extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new AdventuresAdapter(getContext(), adventures, onClickEvento()));
+        recyclerView.setAdapter(new AdventuresAdapter(getContext(), adventures, onClickEvento(),onClickDeleteButton()));
     }
 }

@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,14 +19,16 @@ public class AdventuresAdapter extends RecyclerView.Adapter<AdventuresAdapter.Vi
 
     private final Context context;
     private OnClickListener onClickListener;
+    private OnClickListenerDeleteButton onClickListenerDeleteButton;
     List<Adventure> adventures;
 
     public AdventuresAdapter(Context context, List<Adventure> adventures,
-                             OnClickListener eventoOnClickListener){
+                             OnClickListener eventoOnClickListener,OnClickListenerDeleteButton onClickListenerDeleteButton){
 
         this.context=context;
         this.adventures = adventures;
         this.onClickListener = eventoOnClickListener;
+        this.onClickListenerDeleteButton = onClickListenerDeleteButton;
     }
 
 
@@ -75,6 +78,16 @@ public class AdventuresAdapter extends RecyclerView.Adapter<AdventuresAdapter.Vi
                 }
             });
         }
+
+        //click config
+        if(onClickListener != null){
+            holder.ib_delete_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onClickListenerDeleteButton.onClickDeleteButton(holder.itemView, position);
+                }
+            });
+        }
     }
 
     @Override
@@ -86,18 +99,23 @@ public class AdventuresAdapter extends RecyclerView.Adapter<AdventuresAdapter.Vi
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView name;
         public TextView nextSessionDate;
-        public ImageView backgroudImage;;
+        public ImageView backgroudImage;
+        public ImageButton ib_delete_button;
 
         public ViewHolder(View view){
             super(view);
             name=(TextView) view.findViewById(R.id.name);
             nextSessionDate = (TextView) view.findViewById(R.id.tv_next_session_date);
             backgroudImage = (ImageView) view.findViewById(R.id.background_image);
+            ib_delete_button = (ImageButton) view.findViewById(R.id.ib_delete_button);
         }
 
     }
 
     public interface OnClickListener{
         public void onClickEvento(View view, int idx);
+    }
+    public interface OnClickListenerDeleteButton{
+        public void onClickDeleteButton(View view, int idx);
     }
 }
