@@ -47,6 +47,7 @@
             android:textColor="#97959A"/>
 
         <EditText
+            android:id="@+id/et_adventure_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="40dp"
@@ -58,14 +59,73 @@
             android:hint="Nome da aventura"
             />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Escreva uma descrição para sua aventura"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:textColor="#97959A"/>
+
+        <EditText
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:backgroundTint="#b2b2b2"
+            android:hint="Descrição da aventura"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Escreva o nome do livro de rpg que a aventura seguira:"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:textColor="#97959A"/>
+
+        <EditText
+            android:id="@+id/et_book_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:backgroundTint="#b2b2b2"
+            android:hint="Nome do livro"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seleciona um estilo de fundo para sua aventura:"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:textColor="#97959A"/>
+
+        <Spinner
+            android:id="@+id/sp_background_image"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"/>
+
         <Button
-            android:id="@+id/login_button"
+            android:id="@+id/create_adventure_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:background="#00e2BA"
             android:layout_gravity="end"
-            android:layout_marginTop="190dp"
+            android:layout_marginTop="120dp"
             android:layout_marginRight="40dp"
             android:layout_marginLeft="40dp"
             android:text="PRONTO" />

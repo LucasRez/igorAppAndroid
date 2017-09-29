@@ -110,6 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
         editor.putString("client", response.headers().get("client"));
         editor.putString("expiry", response.headers().get("expiry"));
         editor.putString("uid", response.headers().get("uid"));
+        editor.putString("user_id", Integer.toString(response.body().getData().getId()));
         editor.commit();
 
         goToMainActivity();

@@ -24,6 +24,14 @@ public class Adventure {
         this.book_name = book_name;
     }
 
+    public Adventure(String name, String backgroud_image, String description, int user_id, String book_name) {
+        this.name = name;
+        this.backgroud_image = backgroud_image;
+        this.description = description;
+        this.user_id = user_id;
+        this.book_name = book_name;
+    }
+
     public int getId(){
         return id;
     }

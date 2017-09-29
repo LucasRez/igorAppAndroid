@@ -18,7 +18,7 @@
             android:paddingBottom="10dp">
 
             <TextView
-                android:id="@+id/next_session_date"
+                android:id="@+id/tv_next_session_date"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="21/03"
@@ -29,6 +29,7 @@
                 />
 
             <TextView
+                android:id="@+id/tv_session_name"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="Na corte do rei carmesin"

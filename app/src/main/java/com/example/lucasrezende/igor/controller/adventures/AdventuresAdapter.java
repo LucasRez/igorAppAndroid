@@ -60,6 +60,9 @@ public class AdventuresAdapter extends RecyclerView.Adapter<AdventuresAdapter.Vi
             case "automatica":
                 Picasso.with(context).load(R.drawable.miniatura_imagem_automatica).into(holder.backgroudImage);
                 break;
+            default:
+                Picasso.with(context).load(R.drawable.miniatura_imagem_automatica).into(holder.backgroudImage);
+                break;
 
         }
 
@@ -88,7 +91,7 @@ public class AdventuresAdapter extends RecyclerView.Adapter<AdventuresAdapter.Vi
         public ViewHolder(View view){
             super(view);
             name=(TextView) view.findViewById(R.id.name);
-            nextSessionDate = (TextView) view.findViewById(R.id.next_session_date);
+            nextSessionDate = (TextView) view.findViewById(R.id.tv_next_session_date);
             backgroudImage = (ImageView) view.findViewById(R.id.background_image);
         }
 

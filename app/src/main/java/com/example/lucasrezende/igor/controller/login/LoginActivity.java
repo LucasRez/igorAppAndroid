@@ -84,10 +84,10 @@ public class LoginActivity extends AppCompatActivity {
                 // The network call was a success and we got a response
                 // TODO: use the repository list and display it
                 if(response.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(),"Usuario criado com sucesso",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Usuário conectado com sucesso",Toast.LENGTH_SHORT).show();
                     saveUserReponseHeader(response);
                 }else{
-                    Toast.makeText(getApplicationContext(),"Falha na criação do usuário",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Usúario ou senha incorretos",Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -110,6 +110,7 @@ public class LoginActivity extends AppCompatActivity {
         editor.putString("client", response.headers().get("client"));
         editor.putString("expiry", response.headers().get("expiry"));
         editor.putString("uid", response.headers().get("uid"));
+        editor.putString("user_id", Integer.toString(response.body().getData().getId()));
         editor.commit();
 
         goToMainActivity();
