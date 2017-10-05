@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.lucasrezende.igor.R;
@@ -32,6 +33,7 @@ public class SessionsListFragment extends Fragment {
     List<Session> sessions;
     RecyclerView recyclerView;
     SessionServiceImplentation client;
+    ImageButton newSessionButton;
     View view;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,6 +46,13 @@ public class SessionsListFragment extends Fragment {
     }
 
     private void setUpLayout(){
+        newSessionButton = (ImageButton) view.findViewById(R.id.ib_new_session_button);
+        newSessionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(),"Vamos criar uma sessao",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
