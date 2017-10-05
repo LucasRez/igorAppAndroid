@@ -15,8 +15,6 @@ import android.widget.Toast;
 
 import com.example.lucasrezende.igor.R;
 import com.example.lucasrezende.igor.api.AdventureServiceImplentation;
-import com.example.lucasrezende.igor.api.ResponseBody;
-import com.example.lucasrezende.igor.api.UserServiceImplentation;
 import com.example.lucasrezende.igor.controller.adventures.adventureinfo.AdventureInfoActivity;
 import com.example.lucasrezende.igor.model.Adventure;
 
@@ -69,6 +67,8 @@ public class AdventureListFragment extends Fragment {
             public void onClickEvento(View view, int idx) {
                 //aqui entra quando um dos elementos da lista é selecionado
                 Intent intent = new Intent(getContext(), AdventureInfoActivity.class);
+                intent.putExtra("title", adventures.get(idx).getName());
+                intent.putExtra("description", adventures.get(idx).getDescription());
                 startActivity(intent);
             }
         };

@@ -9,12 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.lucasrezende.igor.R;
-import com.example.lucasrezende.igor.controller.adventures.AdventuresAdapter;
 import com.example.lucasrezende.igor.controller.adventures.adventureinfo.AdventureInfoActivity;
-import com.example.lucasrezende.igor.controller.adventures.adventureinfo.players.PlayersAdapter;
-import com.example.lucasrezende.igor.model.Player;
 import com.example.lucasrezende.igor.model.Session;
 
 import java.util.ArrayList;
@@ -31,9 +29,12 @@ public class SessionsListFragment extends Fragment {
     List<Session> sessions;
     RecyclerView recyclerView;
     View view;
+    TextView adventureDescription;
+    String description;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_sessions_list, container, false);
+        description = getArguments().getString("description");
         setHasOptionsMenu(true);
         setUpList();
         setUpLayout();
@@ -41,6 +42,9 @@ public class SessionsListFragment extends Fragment {
     }
 
     private void setUpLayout(){
+        adventureDescription = (TextView) view.findViewById(R.id.tv_adventure_info_description);
+        adventureDescription.setText(description);
+
     }
 
 
