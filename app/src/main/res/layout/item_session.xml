@@ -42,7 +42,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/tv_session_description"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="Hoje nossos soldados enfrentaram uma horda de orcs"

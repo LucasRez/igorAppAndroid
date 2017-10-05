@@ -42,7 +42,7 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/new_adventure_button"
+        android:id="@+id/new_session_button"
         android:layout_width="75px"
         android:layout_height="75px"
         android:scaleType="fitXY"
