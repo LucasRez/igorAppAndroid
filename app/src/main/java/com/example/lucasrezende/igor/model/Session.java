@@ -23,6 +23,14 @@ public class Session {
         this.adventure_id = adventure_id;
     }
 
+    public Session(String title, String description,Date date, int adventure_id) {
+        this.id = id;
+        this.date = date;
+        this.title = title;
+        this.description = description;
+        this.adventure_id = adventure_id;
+    }
+
     public int getId(){
         return id;
     }

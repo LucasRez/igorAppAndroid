@@ -5,13 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.lucasrezende.igor.R;
-import com.example.lucasrezende.igor.model.Player;
+import com.example.lucasrezende.igor.controller.adventures.AdventuresAdapter;
 import com.example.lucasrezende.igor.model.Session;
 
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -20,13 +21,15 @@ public class SessionsAdapter extends RecyclerView.Adapter<SessionsAdapter.ViewHo
     private final Context context;
     private OnClickListener onClickListener;
     List<Session> sessions;
+    private SessionsAdapter.OnClickListenerDeleteButton onClickListenerDeleteButton;
 
     public SessionsAdapter(Context context, List<Session> sessions,
-                           OnClickListener eventoOnClickListener){
+                           OnClickListener eventoOnClickListener, SessionsAdapter.OnClickListenerDeleteButton onClickListenerDeleteButton){
 
         this.context=context;
         this.sessions = sessions;
         this.onClickListener = eventoOnClickListener;
+        this.onClickListenerDeleteButton = onClickListenerDeleteButton;
     }
 
 
@@ -42,8 +45,12 @@ public class SessionsAdapter extends RecyclerView.Adapter<SessionsAdapter.ViewHo
     public void onBindViewHolder(final ViewHolder holder,final int position) {
         //atualiza a view
         Session session = sessions.get(position);
-//        holder.name.setText(adventure.getName());
-//        holder.nextSessionDate.setText("21/03");
+        Calendar sessionDate = Calendar.getInstance();
+        sessionDate.setTime(session.getDate());
+
+        holder.name.setText(session.getTitle());
+        holder.nextSessionDate.setText(sessionDate.get(Calendar.DAY_OF_MONTH) + "/" + sessionDate.get(Calendar.MONTH));
+        holder.description.setText(session.getDescription());
 
         //click config
         if(onClickListener != null){
@@ -51,6 +58,16 @@ public class SessionsAdapter extends RecyclerView.Adapter<SessionsAdapter.ViewHo
                 @Override
                 public void onClick(View v) {
                     onClickListener.onClickEvento(holder.itemView, position);
+                }
+            });
+        }
+
+        //click config
+        if(onClickListener != null){
+            holder.ib_delete_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onClickListenerDeleteButton.onClickDeleteButton(holder.itemView, position);
                 }
             });
         }
@@ -65,18 +82,23 @@ public class SessionsAdapter extends RecyclerView.Adapter<SessionsAdapter.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView name;
         public TextView nextSessionDate;
-        public ImageView backgroudImage;;
+        public TextView description;
+        public ImageButton ib_delete_button;
 
         public ViewHolder(View view){
             super(view);
-//            name=(TextView) view.findViewById(R.id.name);
-//            nextSessionDate = (TextView) view.findViewById(R.id.next_session_date);
-//            backgroudImage = (ImageView) view.findViewById(R.id.background_image);
+            name=(TextView) view.findViewById(R.id.tv_session_name);
+            nextSessionDate = (TextView) view.findViewById(R.id.tv_next_session_date);
+            description = (TextView) view.findViewById(R.id.tv_session_description);
+            ib_delete_button = (ImageButton) view.findViewById(R.id.ib_delete_button);
         }
 
     }
 
     public interface OnClickListener{
         public void onClickEvento(View view, int idx);
+    }
+    public interface OnClickListenerDeleteButton{
+        public void onClickDeleteButton(View view, int idx);
     }
 }

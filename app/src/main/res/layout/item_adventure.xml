@@ -25,16 +25,16 @@
             android:textSize="20sp"
             android:textColor="@color/white"
             android:gravity="center"
-            android:layout_marginLeft="80px"
-            android:layout_marginRight="80px"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="30px"
-            android:layout_marginRight="80px">
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp">
 
             <TextView
                 android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
                 android:textSize="16sp"
                 android:textColor="@color/white"
                 android:gravity="center"
-                android:layout_marginLeft="80px" />
+                android:layout_marginLeft="20dp" />
 
             <TextView
                 android:id="@+id/tv_next_session_date"
@@ -53,20 +53,20 @@
                 android:textSize="16sp"
                 android:textColor="@color/white"
                 android:gravity="center"
-                android:layout_marginLeft="20px" />
+                android:layout_marginLeft="20dp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageButton
                     android:id="@+id/ib_delete_button"
-                    android:layout_height="90px"
-                    android:layout_width="70px"
+                    android:layout_height="40dp"
+                    android:layout_width="25dp"
                     android:src="@drawable/botao_excluir"
                     android:scaleType="fitXY"
                     android:background="@color/transparent"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginRight="20px" />
+                    android:layout_marginRight="20dp" />
 
             </RelativeLayout>
 
@@ -78,9 +78,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:progress="25"
-            android:layout_marginTop="5px"
-            android:layout_marginLeft="80px"
-            android:layout_marginRight="80px"/>
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="120dp"/>
 
 
     </LinearLayout>

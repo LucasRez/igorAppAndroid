@@ -43,10 +43,10 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginBottom="80dp"
-        android:background="@drawable/roudended_border">
+        android:background="#e2e2e1">
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"

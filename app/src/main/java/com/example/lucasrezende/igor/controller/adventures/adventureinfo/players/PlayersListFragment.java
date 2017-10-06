@@ -33,6 +33,12 @@ public class PlayersListFragment extends Fragment {
     RecyclerView recyclerView;
     View view;
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        setUpLayout();
+    }
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_players_list, container, false);
         setHasOptionsMenu(true);

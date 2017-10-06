@@ -25,6 +25,7 @@ public class AdventureInfoActivity extends AppCompatActivity {
     private TextView adventureTitleView;
     private String title;
     private String description;
+    private int adventure_id;
 
     @Override
     public void onBackPressed() {
@@ -53,6 +54,7 @@ public class AdventureInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_adventure_info);
         title = getIntent().getExtras().getString("title");
         description = getIntent().getExtras().getString("description");
+        adventure_id = getIntent().getExtras().getInt("adventure_id");
         setUpToolbar();
         setUpLayout();
     }
@@ -73,6 +75,7 @@ public class AdventureInfoActivity extends AppCompatActivity {
         SessionsListFragment sessions = new SessionsListFragment();
         Bundle args = new Bundle();
         args.putString("description", description);
+        args.putInt("adventure_id",adventure_id);
         sessions.setArguments(args);
         adapter.addFragment(sessions, "História");
         adapter.addFragment(new PlayersListFragment(), "Jogadores");

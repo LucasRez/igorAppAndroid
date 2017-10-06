@@ -39,10 +39,26 @@
                 android:layout_marginLeft="20dp"
                 />
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/ib_delete_button"
+                    android:layout_height="25dp"
+                    android:layout_width="20dp"
+                    android:src="@drawable/botao_excluir"
+                    android:scaleType="fitXY"
+                    android:tint="@color/primary"
+                    android:background="@color/transparent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="20dp" />
+
+            </RelativeLayout>
+
         </LinearLayout>
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/tv_session_description"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="Hoje nossos soldados enfrentaram uma horda de orcs"

@@ -1,7 +1,9 @@
 package com.example.lucasrezende.igor.controller.adventures;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.lucasrezende.igor.R;
 import com.example.lucasrezende.igor.api.AdventureServiceImplentation;
 import com.example.lucasrezende.igor.controller.adventures.adventureinfo.AdventureInfoActivity;
@@ -69,6 +73,7 @@ public class AdventureListFragment extends Fragment {
                 Intent intent = new Intent(getContext(), AdventureInfoActivity.class);
                 intent.putExtra("title", adventures.get(idx).getName());
                 intent.putExtra("description", adventures.get(idx).getDescription());
+                intent.putExtra("adventure_id", adventures.get(idx).getId());
                 startActivity(intent);
             }
         };
@@ -77,8 +82,25 @@ public class AdventureListFragment extends Fragment {
     private AdventuresAdapter.OnClickListenerDeleteButton onClickDeleteButton(){
         return new AdventuresAdapter.OnClickListenerDeleteButton(){
             @Override
-            public void onClickDeleteButton(View view, int idx) {
-               deleteAdventure(idx);
+            public void onClickDeleteButton(View view,final int idx) {
+                new MaterialDialog.Builder(getContext())
+                        .title("Deseja deletar aventura?")
+                        .content("Todos os dados relacionados com essa aventura também serão deletados.")
+                        .positiveText("Sim")
+                        .onNegative(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+
+                            }
+                        })
+                        .negativeText("Não")
+                        .onPositive(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                deleteAdventure(idx);
+                            }
+                        })
+                        .show();
             }
         };
     }
@@ -125,7 +147,7 @@ public class AdventureListFragment extends Fragment {
                 // The network call was a success and we got a response
                 // TODO: use the repository list and display it
                 if(response.isSuccessful()) {
-                    Toast.makeText(getContext(),"Lista obtida com sucesso",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(),"Lista obtida com sucesso",Toast.LENGTH_SHORT).show();
                     adventures = response.body();
                     setUpList();
                 }else{
