@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void goToMainActivity(){
-        Intent intent = new Intent(getBaseContext(),NavigationActivity.class);
+        Intent intent = new Intent(getBaseContext(),LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }

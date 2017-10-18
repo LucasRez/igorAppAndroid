@@ -1,5 +1,6 @@
 package com.example.lucasrezende.igor.api;
 
+import com.example.lucasrezende.igor.model.Adventure;
 import com.example.lucasrezende.igor.model.Player;
 
 import java.util.List;
@@ -23,6 +24,9 @@ public interface PlayerService {
 
     @GET("players")
     Call<List<Player>> list();
+
+    @GET("players_by_adventure/{adventure_id}")
+    Call<List<Player>> list_adventure_player(@Path("adventure_id") int adventure_id);
 
     @POST("players")
     Call<Player> create(@Body Player player);

@@ -29,6 +29,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/et_player_name"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:text="Mestre"
@@ -39,6 +40,7 @@
                          />
 
                     <TextView
+                        android:id="@+id/et_player_nickname"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:text="Marcio"
@@ -51,6 +53,7 @@
                 </LinearLayout>
 
             <TextView
+                android:id="@+id/et_player_description"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="Mestre impiedoso que não se importa de matar jogadores"

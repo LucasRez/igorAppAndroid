@@ -78,7 +78,12 @@ public class AdventureInfoActivity extends AppCompatActivity {
         args.putInt("adventure_id",adventure_id);
         sessions.setArguments(args);
         adapter.addFragment(sessions, "História");
-        adapter.addFragment(new PlayersListFragment(), "Jogadores");
+        PlayersListFragment playersListFragment = new PlayersListFragment();
+        args = new Bundle();
+        args.putString("description", description);
+        args.putInt("adventure_id",adventure_id);
+        playersListFragment.setArguments(args);
+        adapter.addFragment(playersListFragment, "Jogadores");
         viewPager.setAdapter(adapter);
     }
 

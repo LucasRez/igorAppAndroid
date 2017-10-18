@@ -1,5 +1,6 @@
 package com.example.lucasrezende.igor.api;
 
+import com.example.lucasrezende.igor.model.Adventure;
 import com.example.lucasrezende.igor.model.Player;
 import com.example.lucasrezende.igor.model.Session;
 
@@ -24,6 +25,9 @@ public interface SessionService {
 
     @GET("sessions")
     Call<List<Session>> list();
+
+    @GET("sessions_by_adventure/{adventure_id}")
+    Call<List<Session>> list_adventure_session(@Path("adventure_id") int adventure_id);
 
     @POST("sessions")
     Call<Session> create(@Body Session session);

@@ -24,6 +24,10 @@ public interface AdventureService {
     @GET("adventures")
     Call<List<Adventure>> list();
 
+    @GET("adventures_by_user/{user_id}")
+    Call<List<Adventure>> list_user(@Path("user_id") String id);
+
+
     @POST("adventures")
     Call<Adventure> create(@Body Adventure adventure);
 

@@ -98,7 +98,7 @@ public class SessionsListFragment extends Fragment {
     private void getSessionsList(){
         client = new SessionServiceImplentation(getContext());
         // Fetch a list of the Github repositoriesteste.
-        Call<List<Session>> call = client.getService().list();
+        Call<List<Session>> call = client.getService().list_adventure_session(adventure_id);
 
         // Execute the call asynchronously. Get a positive or negative callback.
         call.enqueue(new Callback<List<Session>>() {

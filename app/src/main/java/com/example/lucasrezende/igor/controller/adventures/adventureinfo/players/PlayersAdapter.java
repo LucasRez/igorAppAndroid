@@ -15,19 +15,23 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 
 public class PlayersAdapter extends RecyclerView.Adapter<PlayersAdapter.ViewHolder> {
 
     private final Context context;
     private OnClickListener onClickListener;
     List<Player> players;
+    private  OnClickListenerDeleteButton onClickListenerDeleteButton;
 
     public PlayersAdapter(Context context, List<Player> players,
-                          OnClickListener eventoOnClickListener){
+                          OnClickListener eventoOnClickListener,OnClickListenerDeleteButton onClickListenerDeleteButton){
 
         this.context=context;
         this.players = players;
         this.onClickListener = eventoOnClickListener;
+        this.onClickListenerDeleteButton = onClickListenerDeleteButton;
     }
 
 
@@ -43,8 +47,11 @@ public class PlayersAdapter extends RecyclerView.Adapter<PlayersAdapter.ViewHold
     public void onBindViewHolder(final ViewHolder holder,final int position) {
         //atualiza a view
         Player player = players.get(position);
-//        holder.name.setText(adventure.getName());
-//        holder.nextSessionDate.setText("21/03");
+        holder.player_name.setText(player.getNickname());
+        holder.player_nickname.setText(player.getNickname());
+        holder.player_description.setText(player.getDescription());
+
+        Picasso.with(context).load(player.getPicture()).into(holder.profile_image);
 
         //click config
         if(onClickListener != null){
@@ -64,20 +71,26 @@ public class PlayersAdapter extends RecyclerView.Adapter<PlayersAdapter.ViewHold
 
     //relates the layout from the xml with the java classes
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        public TextView name;
-        public TextView nextSessionDate;
-        public ImageView backgroudImage;;
+        public TextView player_name;
+        public TextView player_nickname;
+        public TextView player_description;
+        public CircleImageView profile_image;;
 
         public ViewHolder(View view){
             super(view);
-//            name=(TextView) view.findViewById(R.id.name);
-//            nextSessionDate = (TextView) view.findViewById(R.id.next_session_date);
-//            backgroudImage = (ImageView) view.findViewById(R.id.background_image);
+            player_name = (TextView) view.findViewById(R.id.et_player_name);
+            player_nickname = (TextView) view.findViewById(R.id.et_player_nickname);
+            player_description = (TextView) view.findViewById(R.id.et_player_description);
+            profile_image = (CircleImageView) view.findViewById(R.id.profile_image);
         }
 
     }
 
     public interface OnClickListener{
         public void onClickEvento(View view, int idx);
+    }
+
+    public interface OnClickListenerDeleteButton{
+        public void onClickDeleteButton(View view, int idx);
     }
 }

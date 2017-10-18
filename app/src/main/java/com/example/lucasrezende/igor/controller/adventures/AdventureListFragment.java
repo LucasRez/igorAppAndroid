@@ -1,7 +1,9 @@
 package com.example.lucasrezende.igor.controller.adventures;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -18,6 +20,7 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.lucasrezende.igor.R;
+import com.example.lucasrezende.igor.Utils.Constants;
 import com.example.lucasrezende.igor.api.AdventureServiceImplentation;
 import com.example.lucasrezende.igor.controller.adventures.adventureinfo.AdventureInfoActivity;
 import com.example.lucasrezende.igor.model.Adventure;
@@ -135,10 +138,15 @@ public class AdventureListFragment extends Fragment {
         });
     }
 
+    private String getUserIdFromSharedPrefrences(){
+        SharedPreferences sharedPref = getContext().getSharedPreferences(Constants.SharedPreferences, Context.MODE_PRIVATE);
+        return sharedPref.getString("user_id", "");
+    }
+
     private void getAdventuresList(){
         client = new AdventureServiceImplentation(getContext());
         // Fetch a list of the Github repositoriesteste.
-        Call<List<Adventure>> call = client.getService().list();
+        Call<List<Adventure>> call = client.getService().list_user(getUserIdFromSharedPrefrences());
 
         // Execute the call asynchronously. Get a positive or negative callback.
         call.enqueue(new Callback<List<Adventure>>() {
