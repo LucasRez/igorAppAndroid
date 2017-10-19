@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.lucasrezende.igor.R;
@@ -27,6 +28,7 @@ public class AdventureInfoActivity extends AppCompatActivity {
     private String description;
     private int adventure_id;
     ViewPagerAdapter adapter;
+    RelativeLayout relativeLayout;
 
     @Override
     public void onBackPressed() {
@@ -73,6 +75,7 @@ public class AdventureInfoActivity extends AppCompatActivity {
         first_tab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                relativeLayout.setBackgroundResource(R.drawable.aba_de_conteudo);
                 ((ViewPager) viewPager).setCurrentItem(0);
             }
         });
@@ -80,9 +83,13 @@ public class AdventureInfoActivity extends AppCompatActivity {
         second_tab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //relativeLayout.setBackgroundResource(R.drawable.caixa_de_conteudo);
                 ((ViewPager) viewPager).setCurrentItem(1);
             }
         });
+
+        relativeLayout = (RelativeLayout) findViewById(R.id.tabs);
+
     }
 
     private void setupViewPager(ViewPager viewPager) {
