@@ -26,6 +26,7 @@ public class AdventureInfoActivity extends AppCompatActivity {
     private String title;
     private String description;
     private int adventure_id;
+    ViewPagerAdapter adapter;
 
     @Override
     public void onBackPressed() {
@@ -63,15 +64,29 @@ public class AdventureInfoActivity extends AppCompatActivity {
         adventureTitleView = (TextView) findViewById(R.id.tv_adventure_info_title);
         adventureTitleView.setText(title);
 
-        View viewPager = (ViewPager) findViewById(R.id.viewpager);
+        final View viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager((ViewPager) viewPager);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager((ViewPager) viewPager);
+        TextView first_tab = (TextView) findViewById(R.id.first_tab);
+        TextView second_tab = (TextView) findViewById(R.id.second_tab);
+
+        first_tab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ViewPager) viewPager).setCurrentItem(0);
+            }
+        });
+
+        second_tab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ViewPager) viewPager).setCurrentItem(1);
+            }
+        });
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
         SessionsListFragment sessions = new SessionsListFragment();
         Bundle args = new Bundle();
         args.putString("description", description);
