@@ -7,8 +7,8 @@
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profile_image"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@drawable/warrior"
         app:civ_border_width="2dp"
         app:civ_border_color="@color/transparent"
@@ -20,6 +20,7 @@
             android:gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="30dp"
+            android:padding="10dp"
             >
 
 
@@ -33,7 +34,7 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:text="Mestre"
-                        android:textSize="16sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="#200f31"
                         android:gravity="center"
@@ -44,7 +45,7 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:text="Marcio"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textColor="#1a082b"
                         android:gravity="center"
                         android:layout_marginLeft="10dp" />
@@ -57,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="Mestre impiedoso que não se importa de matar jogadores"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:textColor="@color/black"
                 />
 

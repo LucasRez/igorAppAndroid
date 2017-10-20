@@ -51,7 +51,40 @@ public class PlayersAdapter extends RecyclerView.Adapter<PlayersAdapter.ViewHold
         holder.player_nickname.setText(player.getNickname());
         holder.player_description.setText(player.getDescription());
 
-        Picasso.with(context).load(player.getPicture()).into(holder.profile_image);
+        switch (player.getPicture()){
+            case "Cavaleiro":
+                Picasso.with(context).load(R.drawable.warrior).into(holder.profile_image);
+                break;
+
+            case "Mago":
+                Picasso.with(context).load(R.drawable.witch).into(holder.profile_image);
+                break;
+
+            case "Curandeiro":
+                Picasso.with(context).load(R.drawable.healer).into(holder.profile_image);
+                break;
+
+            case "Arqueiro":
+                Picasso.with(context).load(R.drawable.bow).into(holder.profile_image);
+                break;
+
+            case "Gatuno":
+                Picasso.with(context).load(R.drawable.burglar).into(holder.profile_image);
+                break;
+
+            case "Druida":
+                Picasso.with(context).load(R.drawable.bear).into(holder.profile_image);
+                break;
+
+            case "Bardo":
+                Picasso.with(context).load(R.drawable.bard).into(holder.profile_image);
+                break;
+
+            default:
+                Picasso.with(context).load(R.drawable.warrior).into(holder.profile_image);
+                break;
+
+        }
 
         //click config
         if(onClickListener != null){

@@ -1,11 +1,13 @@
 package com.example.lucasrezende.igor.api;
 
+import com.example.lucasrezende.igor.model.Session;
 import com.example.lucasrezende.igor.model.User;
 
 import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -24,6 +26,9 @@ public interface UserService {
     @FormUrlEncoded
     @POST("auth/sign_in")
     Call<ResponseBody> logIn(@Field("email") String email, @Field("password") String password);
+
+    @GET("users/find_by_nickname/{nickname}")
+    Call<User> get_user_by_nickname(@Path("nickname") String nickname);
 
 
     @Headers({

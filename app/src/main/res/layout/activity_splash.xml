@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/background_image"
+    tools:context="com.example.lucasrezende.igor.controller.NavigationActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="80dp"
+        android:text="Hello World!"
+        android:scaleType="fitXY"
+        android:layout_marginRight="90dp"
+        android:layout_marginLeft="90dp"
+        android:src="@drawable/igor_login_icon"/>
+
+
+</LinearLayout>

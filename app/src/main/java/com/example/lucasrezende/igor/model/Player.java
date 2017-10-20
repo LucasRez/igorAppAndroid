@@ -22,6 +22,14 @@ public class Player {
         this.adventure_id = adventure_id;
     }
 
+    public Player(String nickname, String description, String picture, int user_id, int adventure_id) {
+        this.nickname = nickname;
+        this.description = description;
+        this.picture = picture;
+        this.user_id = user_id;
+        this.adventure_id = adventure_id;
+    }
+
     public int getId(){
         return id;
     }

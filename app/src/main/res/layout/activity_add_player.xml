@@ -41,12 +41,35 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Escreve o nickname do jogador que deve ser adicionado"
+                android:text="Escreve o email do jogador que deseja adicionar"
                 android:layout_marginTop="40dp"
                 android:layout_marginLeft="40dp"
                 android:textColor="#97959A"/>
 
             <EditText
+                android:id="@+id/et_player_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/dark_gray"
+                android:backgroundTint="#b2b2b2"
+                android:hint="Email"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escreve o nickname do jogador que deve ser adicionado"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="40dp"
+                android:textColor="#97959A"/>
+
+            <EditText
+                android:id="@+id/et_player_nickname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
@@ -58,8 +81,47 @@
                 android:hint="Nickname"
                 />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecione uma classe para seu jogador:"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="40dp"
+                android:textColor="#97959A"/>
+
+            <Spinner
+                android:id="@+id/sp_player_class"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/dark_gray"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escreva uma descrição para este jogador"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="40dp"
+                android:textColor="#97959A"/>
+
+            <EditText
+                android:id="@+id/et_player_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/dark_gray"
+                android:backgroundTint="#b2b2b2"
+                android:hint="Descrição"
+                />
+
             <Button
-                android:id="@+id/login_button"
+                android:id="@+id/add_player_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -69,6 +131,8 @@
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
                 android:text="PRONTO" />
+
+
         </LinearLayout>
 
         <ImageButton

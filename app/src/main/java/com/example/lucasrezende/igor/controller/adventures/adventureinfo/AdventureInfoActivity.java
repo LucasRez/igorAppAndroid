@@ -83,7 +83,7 @@ public class AdventureInfoActivity extends AppCompatActivity {
         second_tab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //relativeLayout.setBackgroundResource(R.drawable.caixa_de_conteudo);
+                relativeLayout.setBackgroundResource(R.drawable.caixa_de_conteudo);
                 ((ViewPager) viewPager).setCurrentItem(1);
             }
         });

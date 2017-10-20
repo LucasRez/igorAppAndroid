@@ -7,4 +7,15 @@
         <item>krevast</item>
         <item>automatica</item>
     </string-array>
+
+    <string-array name="player_class_types">
+        <item>Cavaleiro</item>
+        <item>Mago</item>
+        <item>Curandeiro</item>
+        <item>Gatuno</item>
+        <item>Druida</item>
+        <item>Bardo</item>
+        <item>Arqueiro</item>
+
+    </string-array>
 </resources>

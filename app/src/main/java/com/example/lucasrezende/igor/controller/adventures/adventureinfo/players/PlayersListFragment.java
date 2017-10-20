@@ -52,6 +52,7 @@ public class PlayersListFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        getPlayerList();
         setUpLayout();
     }
 
@@ -70,6 +71,7 @@ public class PlayersListFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(),NewPlayerActivity.class);
+                intent.putExtra("adventure_id",adventure_id);
                 startActivity(intent);
             }
         });
@@ -81,8 +83,8 @@ public class PlayersListFragment extends Fragment {
             @Override
             public void onClickEvento(View view, int idx) {
                 //aqui entra quando um dos elementos da lista é selecionado
-                Intent intent = new Intent(getContext(), AdventureInfoActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(getContext(), AdventureInfoActivity.class);
+//                startActivity(intent);
             }
         };
     }
