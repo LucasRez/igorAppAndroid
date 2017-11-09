@@ -11,20 +11,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.lucasrezende.igor.R;
-import com.example.lucasrezende.igor.api.AdventureServiceImplentation;
-import com.example.lucasrezende.igor.controller.adventures.AdventuresAdapter;
-import com.example.lucasrezende.igor.controller.adventures.adventureinfo.AdventureInfoActivity;
-import android.widget.ImageButton;
-import android.widget.Toast;
-
-import com.example.lucasrezende.igor.R;
 import com.example.lucasrezende.igor.api.SessionServiceImplentation;
-import com.example.lucasrezende.igor.model.Adventure;
+import com.example.lucasrezende.igor.controller.adventures.adventureinfo.sessions.diceroll.DiceRollActivity;
 import com.example.lucasrezende.igor.model.Session;
 
 import java.util.Date;
@@ -89,8 +84,8 @@ public class SessionsListFragment extends Fragment {
             @Override
             public void onClickEvento(View view, int idx) {
                 //aqui entra quando um dos elementos da lista é selecionado
-//                Intent intent = new Intent(getContext(), AdventureInfoActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(getContext(), DiceRollActivity.class);
+                startActivity(intent);
             }
         };
     }

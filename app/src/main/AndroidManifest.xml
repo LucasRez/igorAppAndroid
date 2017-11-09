@@ -12,23 +12,15 @@
         android:roundIcon="@drawable/igor"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controller.login.RegisterActivity">
-
-        </activity>
-        <activity android:name=".controller.login.LoginActivity">
-
-        </activity>
-        <activity android:name=".controller.NavigationActivity">
-        </activity>
-        <activity android:name=".controller.adventures.adventureinfo.players.NewPlayerActivity">
-        </activity>
-        <activity android:name=".controller.adventures.adventureinfo.AdventureInfoActivity"
-            android:theme="@style/players">
-        </activity>
-        <activity android:name=".controller.adventures.NewAdventureActivity">
-        </activity>
-        <activity android:name=".controller.adventures.adventureinfo.sessions.NewSessionActivity">
-        </activity>
+        <activity android:name=".controller.login.RegisterActivity"></activity>
+        <activity android:name=".controller.login.LoginActivity"></activity>
+        <activity android:name=".controller.NavigationActivity"></activity>
+        <activity android:name=".controller.adventures.adventureinfo.players.NewPlayerActivity"></activity>
+        <activity
+            android:name=".controller.adventures.adventureinfo.AdventureInfoActivity"
+            android:theme="@style/players"></activity>
+        <activity android:name=".controller.adventures.NewAdventureActivity"></activity>
+        <activity android:name=".controller.adventures.adventureinfo.sessions.NewSessionActivity"></activity>
         <activity android:name=".controller.login.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,6 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".controller.adventures.adventureinfo.sessions.diceroll.DiceRollActivity"
+            android:label="@string/title_activity_dice_roll"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
