@@ -4,44 +4,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bpWhite"
+    android:background="@drawable/background_image"
     tools:context="com.example.lucasrezende.igor.controller.adventures.adventureinfo.sessions.diceroll.DiceRollActivity">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar_geral"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat"
         android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:padding="8sp"
+            android:src="@drawable/igor_login_icon"
+            android:id="@+id/toolbar_image"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_below="@id/toolbar_geral"
         android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
-        <TextView
-            android:layout_width="wrap_content"
+        android:layout_margin="40dp"
+        android:background="@color/bpWhite"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Dado de 6"
-            android:textAlignment="center"
-            android:textColor="@color/black"/>
-        <TextView
-            android:id="@+id/tv_dice_roll_result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="6"
-            android:visibility="invisible"
-            android:textAlignment="center"
-            android:textColor="@color/black"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dado"
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Número de dados"
+                android:layout_marginLeft="20dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modificador"
+                android:layout_marginLeft="20dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resultado"
+                android:layout_marginLeft="20dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/primary"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
 
     </LinearLayout>
-    <ImageButton
-    android:id="@+id/bt_dice_roller_roll"
-    android:layout_width="75px"
-    android:layout_height="75px"
-    android:scaleType="fitXY"
-    android:background="@color/transparent"
-    android:src="@drawable/botao_adicionar_sessao"
-    android:layout_alignParentBottom="true"
-    android:layout_alignParentRight="true"
-    android:layout_marginRight="20dp"
-    android:layout_marginBottom="20dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/bt_dice_roller_roll"
+        android:src="@drawable/dice"
+        app:fabSize="normal"
+        android:background="@color/primary"
+        app:backgroundTint="@color/primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="60dp"/>
 
 </RelativeLayout>
