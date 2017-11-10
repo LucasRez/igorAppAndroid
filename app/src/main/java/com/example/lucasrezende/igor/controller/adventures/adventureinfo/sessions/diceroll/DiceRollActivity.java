@@ -1,5 +1,6 @@
 package com.example.lucasrezende.igor.controller.adventures.adventureinfo.sessions.diceroll;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -25,9 +26,8 @@ public class DiceRollActivity extends AppCompatActivity {
         newSessionButton = findViewById(R.id.bt_dice_roller_roll);
         newSessionButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int result = rng.nextInt(6) + 1;
-                rollResultView.setText("" + result);
-                rollResultView.setVisibility(View.VISIBLE);
+                Intent intent = new Intent(getBaseContext(), RollResultsActivity.class);
+                startActivity(intent);
             }
         });
     }
