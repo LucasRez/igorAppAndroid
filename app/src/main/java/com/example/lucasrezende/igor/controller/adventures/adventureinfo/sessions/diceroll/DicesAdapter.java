@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Switch;
@@ -68,7 +69,7 @@ public class DicesAdapter extends RecyclerView.Adapter<DicesAdapter.ViewHolder> 
         holder.modifier_text_view.setText(Integer.toString(dice.getModifier()));
         holder.number_of_dices_text.setText(Integer.toString(dice.getNumberOfDices()));
         holder.tipo_de_dato_text_view.setText(dice.getType());
-        holder.result_text_view.setText(dice.getResult());
+        holder.result_text_view.setText(Integer.toString(dice.getResult()));
 
 
 
@@ -96,17 +97,8 @@ public class DicesAdapter extends RecyclerView.Adapter<DicesAdapter.ViewHolder> 
                 break;
         }
 
-
         //click config
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onDiceClickListener.onClickDice(holder.itemView, position);
-                }
-            });
-
-        //click config
-        holder.dice_button.setOnClickListener(new View.OnClickListener() {
+        holder.roll_dice_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onDiceClickListener.onClickDice(holder.itemView, position);
@@ -163,10 +155,12 @@ public class DicesAdapter extends RecyclerView.Adapter<DicesAdapter.ViewHolder> 
         public TextView modifier_text_view;
         public TextView tipo_de_dato_text_view;
         public TextView result_text_view;
+        public Button roll_dice_button;
 
         public ViewHolder(View view){
             super(view);
             dice_button = view.findViewById(R.id.dice_button);
+            roll_dice_button = view.findViewById(R.id.roll_dice_button);
             add_button = view.findViewById(R.id.add_button);
             number_of_dices_text = view.findViewById(R.id.number_of_dices_text);
             remove_button = view.findViewById(R.id.remove_button);

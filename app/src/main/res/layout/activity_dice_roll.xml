@@ -43,8 +43,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
@@ -52,31 +52,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dado"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Número de dados"
-                android:layout_marginLeft="20dp"
-                android:textSize="15sp"
+                android:text="Quantidade"
+                android:layout_marginLeft="28dp"
+                android:textSize="16sp"
                 android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Modificador"
-                android:layout_marginLeft="20dp"
-                android:textSize="15sp"
+                android:layout_marginLeft="18dp"
+                android:textSize="16sp"
                 android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Resultado"
-                android:layout_marginLeft="20dp"
-                android:textSize="15sp"
+                android:layout_marginLeft="35dp"
+                android:textSize="16sp"
                 android:textColor="@color/black"/>
 
 
