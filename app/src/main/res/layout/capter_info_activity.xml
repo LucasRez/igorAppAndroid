@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e2e2e1">
+
+        <android.support.v7.widget.Toolbar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/toolbar_geral"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:padding="8sp"
+                android:src="@drawable/igor_login_icon"
+                android:id="@+id/toolbar_image"
+                android:layout_gravity="center"
+                android:foregroundGravity="center"/>
+
+        </android.support.v7.widget.Toolbar>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/open_book"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="Capther 1"
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="20sp"
+            android:text=" Your character is a combination of game statistics,
+roleplaying hooks, and your imagination. You
+ch oose a race (such as human or halfling) and
+a class (such as fighter or wizard). You also
+invent the personality, appearance, and backstory of
+your character. O nce completed, your character serves
+as your representative in the game, your avatar in the
+D u n g e o n s and D r a g o n s world.
+Before you dive into step 1 below, think about the
+kind o f adventurer you want to play. You might be a
+courageous fighter, a skulking rogue, a fervent cleric, or
+a flamboyant wizard. Or you might be m ore interested
+in an unconventional character, such as a brawny rogue
+w ho likes hand-to-hand combat, or a sharpshooter who
+picks off enem ies from afar. D o you like fantasy fiction
+featuring dwarves or elves? Try building a character of
+one of those races. D o you want your character to be the
+toughest adventurer at the table? Consider a class like
+barbarian or paladin. If you don’t know where else to
+begin, take a look at the illustrations in this book to see
+what catches your interest.
+O nce you have a character in mind, follow these steps
+in order, making decisions that reflect the character you
+want. Your conception of your character might evolve
+with each choice you make. W hat’s important is that you
+com e to the table with a character you’re excited to play.
+Throughout this chapter, w e use the term character
+sheet to mean whatever you use to track your character,
+whether it’s a form al character sheet (like the one at the
+end of this book), som e form of digital record, or a piece
+of notebook paper. An official D and D character sheet is a
+fine place to start until you know what information you
+need and how you use it during the game.
+B u i l d i n g B r u e n o r
+Each step o f character creation includes an example of
+that step, with a player named Bob building his dwarf
+character, Bruenor.
+1. C h o o s e a R a c e
+Every character belongs to a race, one of the many
+intelligent humanoid species in the  D andD world. The
+m ost com m on player character races are dwarves, elves,
+halflings, and humans. Som e races also have subraces,
+such as mountain dw arf or w ood elf. Chapter 2 provides
+m ore inform ation about these races, as well as the less
+widespread races of dragonborn, gnom es, half"
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"/>
+
+
+
+    </LinearLayout>
+</ScrollView>

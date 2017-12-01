@@ -15,11 +15,15 @@ import com.example.lucasrezende.igor.controller.books.BooksFragment;
 import com.example.lucasrezende.igor.controller.configurations.ConfigurationsFragment;
 import com.example.lucasrezende.igor.controller.notifications.NotificationsFragment;
 import com.example.lucasrezende.igor.controller.useraccount.UserAccountFragment;
+import com.mikepenz.materialdrawer.AccountHeader;
+import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 public class NavigationActivity extends AppCompatActivity {
 
@@ -66,13 +70,29 @@ public class NavigationActivity extends AppCompatActivity {
         //if you want to update the items at a later time it is recommended to keep it in a variable
         PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Aventuras");
         PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName("Livros");
-        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName("Contas");
-        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(4).withName("Notificações");
-        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName("Configurações");
+        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName("Rolar dados");
+        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(4).withName("Meu Perfil");
+        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName("Fazer Logout");
+
+        // Create the AccountHeader
+        AccountHeader headerResult = new AccountHeaderBuilder()
+                .withActivity(this)
+                .withHeaderBackground(R.color.primary)
+                .addProfiles(
+                        new ProfileDrawerItem().withName("Victor Zaffalon").withEmail("teste@gmail.com").withIcon(getResources().getDrawable(R.drawable.profile))
+                )
+                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
+                    @Override
+                    public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
+                        return false;
+                    }
+                })
+                .build();
 
         //create the drawer and remember the `Drawer` result object
         final Drawer result = new DrawerBuilder()
                 .withActivity(this)
+                .withAccountHeader(headerResult)
                 .withToolbar(setUpToolbar())
                 .addDrawerItems(
                         item1,
@@ -88,26 +108,26 @@ public class NavigationActivity extends AppCompatActivity {
             public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                 // do something with the clicked item :D
                 switch (position){
-                    case 0:
+                    case 1:
                         changeFragment(new AdventureListFragment());
                         result.closeDrawer();
                         break;
-                    case 1:
+                    case 2:
                         changeFragment(new BooksFragment());
                         result.closeDrawer();
                         break;
-                    case 2:
+                    case 3:
                         changeFragment(new UserAccountFragment());
                         result.closeDrawer();
                         break;
-                    case 3:
+                    case 4:
                         changeFragment(new NotificationsFragment());
                         result.closeDrawer();
                         break;
-                    case 4:
-                        changeFragment(new ConfigurationsFragment());
-                        result.closeDrawer();
+                    case 5:
+                        finish();
                         break;
+
 
                 }
                 return true;

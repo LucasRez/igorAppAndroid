@@ -40,7 +40,7 @@ public class DiceRollActivity extends AppCompatActivity {
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_empty, menu);
+        getMenuInflater().inflate(R.menu.menu_roll_list, menu);
         return true;
     }
 
@@ -57,6 +57,11 @@ public class DiceRollActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == android.R.id.home) {
             finish();
+            return true;
+        }
+        if (id == R.id.roll_list_item) {
+            Intent intent = new Intent(getApplicationContext(),MenuRollListActivity.class);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);

@@ -15,6 +15,9 @@
         <activity android:name=".controller.login.RegisterActivity" />
         <activity android:name=".controller.login.LoginActivity" />
         <activity android:name=".controller.NavigationActivity" />
+        <activity android:name=".controller.books.CapterInfoActvity" />
+        <activity android:name=".controller.adventures.adventureinfo.sessions.diceroll.MenuRollListActivity" />
+        <activity android:name=".controller.books.BookInfoActivity" />
         <activity android:name=".controller.adventures.adventureinfo.players.NewPlayerActivity" />
         <activity
             android:name=".controller.adventures.adventureinfo.AdventureInfoActivity"

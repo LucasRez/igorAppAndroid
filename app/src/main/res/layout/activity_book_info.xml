@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="@drawable/background_image">
+    android:id="@+id/background"
+    android:background="@drawable/players_handbook">
 
     <android.support.v7.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -31,12 +32,22 @@
         android:id="@+id/tv_adventure_info_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Na corte do rei carmesin de rubro carmin"
-        android:textSize="30sp"
+        android:text="Dungeons and Dragons"
+        android:textSize="26sp"
         android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="40dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_adventure_info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Players Handbook"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal" />
 
     <RelativeLayout
         android:id="@+id/tabs"
@@ -50,21 +61,21 @@
             android:id="@+id/first_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Andamento"
+            android:text="Sumário"
             android:textColor="@color/black"
             android:textSize="28sp"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="50dp"/>
+            android:layout_marginLeft="66dp"/>
 
         <TextView
             android:id="@+id/second_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jogadores"
+            android:text="Resumo"
             android:textColor="@color/black"
             android:textSize="28sp"
             android:layout_marginTop="30dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginRight="66dp"
             android:layout_alignParentEnd="true"/>
 
 
